@@ -5,4 +5,10 @@
 
     <dimen name="location_title_size">24sp</dimen>
     <dimen name="location_title_padding">16dp</dimen>
+
+    <dimen name="remote_controller_button_width">100dp</dimen>
+    <dimen name="remote_controller_button_height">100dp</dimen>
+    <dimen name="remote_controller_button_radius">16dp</dimen>
+
+    <dimen name="tools_button_radius">8dp</dimen>
 </resources>

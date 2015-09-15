@@ -21,4 +21,8 @@
         <item name="android:padding">@dimen/location_title_padding</item>
     </style>
 
+    <style name="AmpertechTheme.RemoteControllerButton" parent="AmpertechTheme">
+        <item name="android:background">@drawable/bg_button_remote_controller</item>
+    </style>
+
 </resources>

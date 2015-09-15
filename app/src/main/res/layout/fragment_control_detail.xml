@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         style="@style/AmpertechTheme.LocationTitle"
         android:text="Lokace"
+        android:layout_marginBottom="20dp"
         />
 
     <LinearLayout
@@ -18,26 +19,51 @@
         android:layout_weight="1"
         >
 
-        <Button
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="1"
-            />
+            android:gravity="center"
+            >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="2"
-            />
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                android:text="1"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
 
-        <Button
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="3"
-            />
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -47,26 +73,50 @@
         android:layout_weight="1"
         >
 
-        <Button
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="4"
-            />
+            android:gravity="center"
+            >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="5"
-            />
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
 
-        <Button
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="6"
-            />
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -76,26 +126,50 @@
         android:layout_weight="1"
         >
 
-        <Button
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="7"
-            />
+            android:gravity="center"
+            >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="8"
-            />
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
 
-        <Button
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="9"
-            />
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="@dimen/remote_controller_button_width"
+                android:layout_height="@dimen/remote_controller_button_height"
+                style="@style/AmpertechTheme.RemoteControllerButton"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
