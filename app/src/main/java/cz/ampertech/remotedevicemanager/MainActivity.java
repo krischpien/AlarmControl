@@ -1,16 +1,29 @@
 package cz.ampertech.remotedevicemanager;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
+
+import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
+import cz.ampertech.remotedevicemanager.service.RemoteControllerService;
+import cz.ampertech.remotedevicemanager.service.impl.RemoteControllerMock;
+import cz.ampertech.remotedevicemanager.view.adapter.RemoteControlPageAdapter;
+import cz.ampertech.remotedevicemanager.view.fragment.RemoteControlPageFragment;
+
+public class MainActivity extends FragmentActivity {
 
     private boolean aboutToExit = false;
+    private ViewPager viewPager = null;
+
+    private RemoteControllerService remoteControllerService = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +31,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getActionBar().setCustomView(R.layout.actionbar);
+
+        remoteControllerService = new RemoteControllerMock();
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+
+        List<RemoteControlPageFragment> fragmentPages = new ArrayList<>();
+        for(RemoteControlLocation rcLocation : remoteControllerService.getAllRemoteLocations()){
+            fragmentPages.add(RemoteControlPageFragment.newInstance(rcLocation));
+        }
+
+        RemoteControlPageAdapter pageAdapter = new RemoteControlPageAdapter(getSupportFragmentManager(), fragmentPages);
+
+        viewPager.setAdapter(pageAdapter);
 
     }
 

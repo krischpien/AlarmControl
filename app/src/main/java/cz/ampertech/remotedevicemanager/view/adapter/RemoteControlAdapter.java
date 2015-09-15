@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import cz.ampertech.remotedevicemanager.R;
-import cz.ampertech.remotedevicemanager.entity.RemoteController;
+import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
 
 /**
  * Created by Jan on 15.09.2015.
@@ -18,27 +18,27 @@ import cz.ampertech.remotedevicemanager.entity.RemoteController;
 public class RemoteControlAdapter extends BaseAdapter {
 
     private static final String LOG_TAG = "RemoteControlAdapter";
-    private List<RemoteController> remoteControllers = null;
+    private List<RemoteControlLocation> remoteControlLocations = null;
     private Context context = null;
 
-    public RemoteControlAdapter(Context context, List<RemoteController> remoteControllers){
+    public RemoteControlAdapter(Context context, List<RemoteControlLocation> remoteControlLocations){
         this.context = context;
-        this.remoteControllers = remoteControllers;
+        this.remoteControlLocations = remoteControlLocations;
     }
 
     @Override
     public int getCount() {
-        return remoteControllers.size();
+        return remoteControlLocations.size();
     }
 
     @Override
-    public RemoteController getItem(int position) {
-        return remoteControllers.get(position);
+    public RemoteControlLocation getItem(int position) {
+        return remoteControlLocations.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return remoteControllers.get(position).getId();
+        return remoteControlLocations.get(position).getId();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class RemoteControlAdapter extends BaseAdapter {
         }
         TextView remoteControllerNameTextView = (TextView) rootView.findViewById(R.id.remote_controller_name_tv);
 
-        remoteControllerNameTextView.setText(remoteControllers.get(position).getName());
+        remoteControllerNameTextView.setText(remoteControlLocations.get(position).getLocation());
 
         return rootView;
     }

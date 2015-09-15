@@ -8,15 +8,23 @@ import java.io.Serializable;
 public class RemoteController implements Serializable {
 
     private long id;
-    private String name;
+    private String title;
+    private String syntax;
+    private int position;
+
+    // foreign key
+    private long locationId;
+
 
     public RemoteController(){
 
     }
 
-    public RemoteController(long id, String name){
+    public RemoteController(long id, String title, int position, long locationId){
         this.id = id;
-        this.name = name;
+        this.title = title;
+        this.position = position;
+        this.locationId = locationId;
     }
 
     public long getId() {
@@ -27,11 +35,35 @@ public class RemoteController implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getSyntax() {
+        return syntax;
+    }
+
+    public void setSyntax(String syntax) {
+        this.syntax = syntax;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public long getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(long locationId) {
+        this.locationId = locationId;
     }
 }
