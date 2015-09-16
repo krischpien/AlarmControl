@@ -2,4 +2,5 @@
 <resources>
     <color name="ampertech_orange">#EB660F</color>
     <color name="ampertech_gray">#aAaAaA</color>
+    <color name="ampertech_gray_light">#eaeaea</color>
 </resources>

@@ -39,4 +39,6 @@ public class RemoteControlPageAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return fragmentPages.get(position).getRemoteControlLocation().getLocation();
     }
+
+
 }

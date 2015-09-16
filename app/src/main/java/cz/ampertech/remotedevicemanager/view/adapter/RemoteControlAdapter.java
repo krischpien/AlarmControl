@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
 
 import cz.ampertech.remotedevicemanager.R;
 import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
+import cz.ampertech.remotedevicemanager.entity.RemoteController;
 
 /**
  * Created by Jan on 15.09.2015.
@@ -18,27 +20,27 @@ import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
 public class RemoteControlAdapter extends BaseAdapter {
 
     private static final String LOG_TAG = "RemoteControlAdapter";
-    private List<RemoteControlLocation> remoteControlLocations = null;
+    private List<RemoteController> remoteControllers = null;
     private Context context = null;
 
-    public RemoteControlAdapter(Context context, List<RemoteControlLocation> remoteControlLocations){
+    public RemoteControlAdapter(Context context, List<RemoteController> remoteControlLocations){
         this.context = context;
-        this.remoteControlLocations = remoteControlLocations;
+        this.remoteControllers = remoteControlLocations;
     }
 
     @Override
     public int getCount() {
-        return remoteControlLocations.size();
+        return remoteControllers.size();
     }
 
     @Override
-    public RemoteControlLocation getItem(int position) {
-        return remoteControlLocations.get(position);
+    public RemoteController getItem(int position) {
+        return remoteControllers.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return remoteControlLocations.get(position).getId();
+        return remoteControllers.get(position).getId();
     }
 
     @Override
@@ -48,9 +50,9 @@ public class RemoteControlAdapter extends BaseAdapter {
             LayoutInflater inflater = ((LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
             rootView = inflater.inflate(R.layout.single_row_remote_controller, parent, false);
         }
-        TextView remoteControllerNameTextView = (TextView) rootView.findViewById(R.id.remote_controller_name_tv);
+        Button remoteControllerButton = (Button) rootView.findViewById(R.id.remote_controller_button);
 
-        remoteControllerNameTextView.setText(remoteControlLocations.get(position).getLocation());
+        remoteControllerButton.setText(remoteControllers.get(position).getTitle());
 
         return rootView;
     }

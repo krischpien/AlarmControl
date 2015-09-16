@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/bg_dialog_plus"
+    android:gravity="center"
+    android:orientation="vertical"
+
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="24dp"
+    >
+
+    <ListView
+        android:id="@+id/dialog_plus_menu_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/ampertech_gray_light"
+        android:dividerHeight="1dp"
+
+        >
+
+    </ListView>
+
+</LinearLayout>

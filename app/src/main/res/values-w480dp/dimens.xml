@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="location_title_size">24sp</dimen>
+    <dimen name="location_title_padding">16dp</dimen>
+
+    <dimen name="remote_controller_button_width">80dp</dimen>
+    <dimen name="remote_controller_button_height">80dp</dimen>
+    <dimen name="remote_controller_button_radius">16dp</dimen>
+
+    <dimen name="tools_button_radius">8dp</dimen>
+</resources>

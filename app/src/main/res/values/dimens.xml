@@ -6,9 +6,16 @@
     <dimen name="location_title_size">24sp</dimen>
     <dimen name="location_title_padding">16dp</dimen>
 
-    <dimen name="remote_controller_button_width">100dp</dimen>
-    <dimen name="remote_controller_button_height">100dp</dimen>
+    <dimen name="remote_controller_button_width">88dp</dimen>
+    <dimen name="remote_controller_button_height">88dp</dimen>
     <dimen name="remote_controller_button_radius">16dp</dimen>
 
     <dimen name="tools_button_radius">8dp</dimen>
+
+    <dimen name="remote_control_grid_padding_left">8dp</dimen>
+    <dimen name="remote_control_grid_padding_right">8dp</dimen>
+    <dimen name="remote_control_grid_padding_top">32dp</dimen>
+    <dimen name="remote_control_grid_padding_bottom">16dp</dimen>
+    <dimen name="remote_control_grid_vertical_spacing">20dp</dimen>
+    <dimen name="plus_menu_text_view_size">20sp</dimen>
 </resources>
