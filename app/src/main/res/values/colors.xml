@@ -3,4 +3,7 @@
     <color name="ampertech_orange">#EB660F</color>
     <color name="ampertech_gray">#aAaAaA</color>
     <color name="ampertech_gray_light">#eaeaea</color>
+
+    <color name="history_item_sent">#35923E</color>
+    <color name="history_item_not_sent">#FF2400</color>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ import cz.ampertech.remotedevicemanager.view.adapter.PlusMenuAdapter;
  * Created by Jan on 16.09.2015.
  */
 public class PlusDialogFragment extends DialogFragment implements AdapterView.OnItemClickListener{
+
+    private static final String LOG_TAG = "PlusDialogFragment";
 
     private ActivityDialogCallback dialogCallback = null;
     private ListView plusMenuListView = null;
@@ -42,7 +45,6 @@ public class PlusDialogFragment extends DialogFragment implements AdapterView.On
         PlusMenuAdapter plusMenuAdapter = new PlusMenuAdapter(getActivity(), plusMenuService.getAllMenuItems());
         plusMenuListView.setAdapter(plusMenuAdapter);
         plusMenuListView.setOnItemClickListener(this);
-
         return view;
     }
 
@@ -51,19 +53,19 @@ public class PlusDialogFragment extends DialogFragment implements AdapterView.On
 
         switch ((int) id){
             case PlusMenuItem.PLUS_MENU_ITEM_ADD_SCREEN:
-                Toast.makeText(getActivity(), "Add screen clicked", Toast.LENGTH_SHORT).show();
+
                 break;
             case PlusMenuItem.PLUS_MENU_ITEM_ADD_BUTTON:
-                Toast.makeText(getActivity(), "Add button clicked", Toast.LENGTH_SHORT).show();
+                new AddRemoteButtonDialog().show(getActivity().getSupportFragmentManager(), "add_button_dialog");
                 break;
             case PlusMenuItem.PLUS_MENU_ITEM_ADD_EDIT_OR_REMOVE:
-                Toast.makeText(getActivity(), "Edit or remove clicked", Toast.LENGTH_SHORT).show();
+
                 break;
             default:
-                Toast.makeText(getActivity(), "menu item missing", Toast.LENGTH_SHORT).show();
+                Log.d(LOG_TAG, "onItemClick action not found");
         }
         dismiss();
-        dialogCallback.setDialogIsVisible(false);
+        dialogCallback.setPlusDialogVisible(false);
     }
 
     @Override
@@ -73,6 +75,6 @@ public class PlusDialogFragment extends DialogFragment implements AdapterView.On
     }
 
     public interface ActivityDialogCallback{
-        void setDialogIsVisible(boolean visible);
+        void setPlusDialogVisible(boolean visible);
     }
 }

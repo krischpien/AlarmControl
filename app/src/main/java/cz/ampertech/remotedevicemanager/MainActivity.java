@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,16 +22,19 @@ import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
 import cz.ampertech.remotedevicemanager.service.RemoteControllerService;
 import cz.ampertech.remotedevicemanager.service.impl.RemoteControllerMock;
 import cz.ampertech.remotedevicemanager.view.adapter.RemoteControlPageAdapter;
+import cz.ampertech.remotedevicemanager.view.fragment.HistoryFragment;
 import cz.ampertech.remotedevicemanager.view.fragment.PlusDialogFragment;
+import cz.ampertech.remotedevicemanager.view.fragment.RemoteControlFragment;
 import cz.ampertech.remotedevicemanager.view.fragment.RemoteControlPageFragment;
 
 public class MainActivity extends FragmentActivity implements PlusDialogFragment.ActivityDialogCallback{
 
+    private static final String LOG_TAG = "MainActivity";
+
     private boolean aboutToExit = false;
     private boolean plusMenuDialogVisible = false;
-    private ViewPager viewPager = null;
+    private String currentFragmentTag = "";
 
-    private RemoteControllerService remoteControllerService = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +43,7 @@ public class MainActivity extends FragmentActivity implements PlusDialogFragment
         getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getActionBar().setCustomView(R.layout.actionbar);
 
-        remoteControllerService = new RemoteControllerMock();
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-
-        List<RemoteControlPageFragment> fragmentPages = new ArrayList<>();
-        for(RemoteControlLocation rcLocation : remoteControllerService.getAllRemoteLocations()){
-            fragmentPages.add(RemoteControlPageFragment.newInstance(rcLocation));
-        }
-
-        RemoteControlPageAdapter pageAdapter = new RemoteControlPageAdapter(getSupportFragmentManager(), fragmentPages);
-
-        viewPager.setAdapter(pageAdapter);
+    replaceFragment(new RemoteControlFragment(), R.id.main_fragment_container, null, false, "remote_controls");
 
     }
 
@@ -92,6 +86,7 @@ public class MainActivity extends FragmentActivity implements PlusDialogFragment
             }
         }
         else{
+            currentFragmentTag = "";
             super.onBackPressed();
         }
     }
@@ -106,27 +101,33 @@ public class MainActivity extends FragmentActivity implements PlusDialogFragment
             replaceFragment(plusDialogFragment, R.id.control_detail_dialog_plus_container, null, true, "plus_dialog");
             plusMenuDialogVisible = true;
         }
+        else{
+            onBackPressed();
+        }
 
     }
     public void onAlarmHistoryClick(View view) {
-        replaceFragment();
+        replaceFragment(new HistoryFragment(), R.id.main_fragment_container, null, true, "history");
     }
 
     @Override
-    public void setDialogIsVisible(boolean visible) {
+    public void setPlusDialogVisible(boolean visible) {
         plusMenuDialogVisible = visible;
     }
 
-    private void replaceFragment(Fragment fragment, int containerId, Bundle bundle, boolean addToBackstack, String name){
+    private void replaceFragment(Fragment fragment, int containerId, Bundle bundle, boolean addToBackstack, String replacingFragmentTag){
+        if(currentFragmentTag.equals(replacingFragmentTag)){
+            Log.d(LOG_TAG, "replaceFragment current fragment wont be replaced");
+            return;
+        }
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(containerId, fragment, name);
-        fragmentTransaction.addToBackStack("plus_dialog");
+        fragmentTransaction.add(containerId, fragment);
         if(addToBackstack) {
-            fragmentTransaction.addToBackStack(name);
+            fragmentTransaction.addToBackStack(replacingFragmentTag);
         }
         fragmentTransaction.commit();
-
+        currentFragmentTag = replacingFragmentTag;
     }
 
 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/ampertech_orange"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Přidání tlačítka"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ampertech_gray"
+        />
+
+    <GridLayout
+        android:id="@+id/dialog_add_button_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:columnCount="2"
+        android:rowCount="7">
+
+        <!-- Command name -->
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/dialog_add_button_command_name" />
+
+        <EditText
+            android:layout_gravity="center"
+            android:ems="10" />
+
+        <!-- Command description -->
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/dialog_add_button_command_description" />
+
+        <EditText
+            android:layout_gravity="center"
+            android:ems="10" />
+
+        <!-- Command syntax -->
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/dialog_add_button_command_syntax" />
+
+        <EditText
+            android:layout_gravity="center"
+            android:ems="10" />
+
+        <!-- URL address-->
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/dialog_add_button_url_address" />
+
+        <EditText
+            android:layout_gravity="center"
+            android:ems="10" />
+
+        <!-- GSM number -->
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/dialog_add_button_gsm_number" />
+
+        <EditText
+            android:layout_gravity="center"
+            android:ems="10" />
+
+
+        <Button
+            android:id="@+id/dialog_add_button_submit"
+            android:layout_columnSpan="2"
+            android:text="@string/dialog_submit"
+            android:layout_width="match_parent"
+            />
+
+
+
+    </GridLayout>
+</LinearLayout>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="plus_menu_items">
-        <item>@string/plus_menu_item_add_screen</item>
-        <item>@string/plus_menu_item_add_button</item>
-        <item>@string/plus_menu_item_add_edit</item>
+        <item>@string/dialog_plus_menu_add_screen</item>
+        <item>@string/dialog_plus_menu_add_button</item>
+        <item>@string/dialog_plus_menu_add_edit</item>
     </string-array>
 
 </resources>

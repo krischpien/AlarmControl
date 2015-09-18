@@ -2,6 +2,7 @@ package cz.ampertech.remotedevicemanager.service;
 
 import java.util.List;
 
+import cz.ampertech.remotedevicemanager.entity.RemoteControlHistoryItem;
 import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
 import cz.ampertech.remotedevicemanager.entity.RemoteController;
 
@@ -13,5 +14,7 @@ public interface RemoteControllerService {
     List<RemoteControlLocation> getAllRemoteLocations();
 
     List<RemoteController> getAllRemoteControllersForLocation(long locationId);
+
+    List<RemoteControlHistoryItem> getCompleteHistory();
 
 }

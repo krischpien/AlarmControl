@@ -18,4 +18,8 @@
     <dimen name="remote_control_grid_padding_bottom">16dp</dimen>
     <dimen name="remote_control_grid_vertical_spacing">20dp</dimen>
     <dimen name="plus_menu_text_view_size">20sp</dimen>
+
+    <dimen name="dialog_radius">16sp</dimen>
+
+
 </resources>

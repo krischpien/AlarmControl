@@ -1,12 +1,26 @@
 <resources>
     <string name="app_name">ALARM CONTROL</string>
 
-    <string name="plus_menu_item_add_screen">PŘIDAT OBRAZOVKU</string>
-    <string name="plus_menu_item_add_button">PŘIDAT TLAČÍTKO</string>
-    <string name="plus_menu_item_add_edit">UPRAVIT / ODEBRAT</string>
+
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash_screen">Alarm control start</string>
 
     <string name="exit_application_confirmation">Stiskněte tlačítko zpět ještě jednou pro ukončení aplikace.</string>
+
+    <string name="history_state_sent">Odesláno</string>
+    <string name="history_state_not_sent">Neodesláno</string>
+
+    <string name="dialog_plus_menu_add_screen">PŘIDAT OBRAZOVKU</string>
+    <string name="dialog_plus_menu_add_button">PŘIDAT TLAČÍTKO</string>
+    <string name="dialog_plus_menu_add_edit">UPRAVIT / ODEBRAT</string>
+
+    <string name="dialog_add_button_command_name">Název příkazu</string>
+    <string name="dialog_add_button_command_description">Popisek příkazu</string>
+    <string name="dialog_add_button_command_syntax">Syntaxe</string>
+    <string name="dialog_add_button_url_address">URL adresa</string>
+    <string name="dialog_add_button_gsm_number">Telefonní číslo</string>
+    <string name="dialog_submit">Potvrdit</string>
+
+
 </resources>

@@ -3,6 +3,7 @@ package cz.ampertech.remotedevicemanager.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import cz.ampertech.remotedevicemanager.entity.RemoteControlHistoryItem;
 import cz.ampertech.remotedevicemanager.entity.RemoteControlLocation;
 import cz.ampertech.remotedevicemanager.entity.RemoteController;
 import cz.ampertech.remotedevicemanager.service.RemoteControllerService;
@@ -71,5 +72,25 @@ public class RemoteControllerMock implements RemoteControllerService {
 
         }
         return remoteControllers;
+    }
+
+    @Override
+    public List<RemoteControlHistoryItem> getCompleteHistory() {
+        List<RemoteControlHistoryItem> historyItems = new ArrayList<>();
+        historyItems.add(new RemoteControlHistoryItem(1, 1, "Pokus", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(2, 1, "Test", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(3, 1, "Žaluzie", "2015-05-08-17:48:53", false));
+        historyItems.add(new RemoteControlHistoryItem(4, 1, "Pisoár spláchnut", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(5, 1, "Žaluzie", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(6, 1, "Leprikon", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(7, 1, "Okna", "2015-05-08-17:48:53", false));
+        historyItems.add(new RemoteControlHistoryItem(8, 1, "Dveře", "2015-05-08-17:48:53", false));
+        historyItems.add(new RemoteControlHistoryItem(9, 1, "Kapačky", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(10, 1, "Šuplík", "2015-05-08-17:48:53", false));
+        historyItems.add(new RemoteControlHistoryItem(11, 1, "Zásuvka", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(12, 1, "Liška", "2015-05-08-17:48:53", true));
+        historyItems.add(new RemoteControlHistoryItem(13, 1, "Želva", "2015-05-08-17:48:53", false));
+        historyItems.add(new RemoteControlHistoryItem(14, 1, "Bobík", "2015-05-08-17:48:53", true));
+        return historyItems;
     }
 }
